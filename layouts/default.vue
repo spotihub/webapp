@@ -1,5 +1,8 @@
 <template>
   <v-app>
+    <v-app-bar app flat>
+      <v-toolbar-title>SpotiHub</v-toolbar-title>
+    </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
