@@ -1,10 +1,14 @@
 <template>
-  <v-row justify="center" align="center">
-  </v-row>
+  <v-container>
+    <GithubLoginCard />
+
+  </v-container>
 </template>
 
 <script>
+import GithubLoginCard from "~/components/cards/github-login-card.vue";
 export default {
-  name: 'IndexPage'
+  name: "IndexPage",
+  components: { GithubLoginCard }
 }
 </script>
