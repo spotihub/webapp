@@ -48,6 +48,9 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
+  publicRuntimeConfig: buildRuntimeConfig()
+
+
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
@@ -99,5 +102,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  }
+}
+
+const buildRuntimeConfig = () => {
+  return {
+    endpoints: {
+      api: process.env.API_BASE_URL
+    }
   }
 }
