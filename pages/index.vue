@@ -1,14 +1,18 @@
 <template>
   <v-container>
-    <GithubLoginCard />
+    <GithubLoginCard v-if="!loggedIn" />
 
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import GithubLoginCard from "~/components/cards/github-login-card.vue";
+import auth from "~/mixins/auth";
+import device from "~/mixins/device";
+
 export default {
   name: "IndexPage",
-  components: { GithubLoginCard }
+  components: { GithubLoginCard },
+  mixins: [auth, device]
 }
 </script>
