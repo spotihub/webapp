@@ -48,7 +48,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
-  publicRuntimeConfig: buildRuntimeConfig()
+  publicRuntimeConfig: buildRuntimeConfig(),
 
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
