@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
+console.info("Using API url:", process.env.API_BASE_URL)
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -42,12 +44,37 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: 'en'
+    }
+  },
+
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {
+    baseURL: process.env.API_BASE_URL,
+    credentials: true
+  },
+
+  // Auth module configuration
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          user: {
+            url: `${process.env.API_BASE_URL}/api/profile`,
+            method: 'get',
+          }
+        },
+        user: {
+          property: false
+        }
+      }
     }
   },
 
