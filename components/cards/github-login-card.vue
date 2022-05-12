@@ -12,7 +12,7 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn class="ml-auto" text :href="`${$config.endpoints.api}/api/integration/github`">
+      <v-btn class="ml-auto" text :href="`${$config.endpoints.api}/api/authentication/login`">
         Sign in with GitHub
       </v-btn>
     </v-card-actions>
