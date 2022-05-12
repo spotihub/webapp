@@ -48,7 +48,11 @@ export default {
     '@nuxtjs/auth-next'
   ],
 
-  publicRuntimeConfig: buildRuntimeConfig(),
+  publicRuntimeConfig: {
+    endpoints: {
+      api: process.env.API_BASE_URL
+    }
+  },
 
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -66,16 +70,29 @@ export default {
 
   // Auth module configuration
   auth: {
+    redirect: {
+      home: '/'
+    },
     strategies: {
       local: {
+        scheme: 'refresh',
         endpoints: {
           user: {
             url: `${process.env.API_BASE_URL}/api/profile`,
             method: 'get',
+          },
+          refresh: {
+            url: `${process.env.API_BASE_URL}/api/authentication/refresh`,
+            method: 'post'
           }
         },
         user: {
           property: false
+        },
+        refreshToken: {
+          property: 'RefreshToken',
+          data: 'RefreshToken',
+          tokenRequired: true,
         }
       }
     }
@@ -102,13 +119,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
-}
-
-const buildRuntimeConfig = () => {
-  return {
-    endpoints: {
-      api: process.env.API_BASE_URL
-    }
   }
 }
