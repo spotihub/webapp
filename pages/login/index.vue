@@ -14,8 +14,8 @@ export default {
   created() {
     const token = this.$route.query.token;
     const refreshToken = this.$route.query.refreshToken;
-    this.$auth.setUserToken(token, refreshToken);
-    this.$nuxt.$router.replace({ path: '/' })
+    this.$auth.setUserToken(token, refreshToken)
+      .then(() => this.$nuxt.$router.replace({ path: '/' }));
   }
 }
 </script>
