@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1660915103",layout:"default",error:a,state:{auth:{user:a,loggedIn:false,strategy:"local"}},serverRendered:true,routePath:b,config:{endpoints:{api:"https:\u002F\u002Fapi.spotihub.app"},_app:{basePath:b,assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null,"\u002F"));
